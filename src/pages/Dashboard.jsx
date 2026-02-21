@@ -1,33 +1,17 @@
-import { Link } from "react-router";
+import { Outlet } from 'react-router';
+import SideBar from '../components/SideBar';
 
-const NavBar = () => {
+const Dashboard = () => {
     return (
-        <div className="p-4">
-            <ul className="flex flex-row space-x-5">
-                <li>
-                    <Link
-                        className="hover:text-red-700 hover:border hover: border-2 hover: p-2" to="/"
-                    >
-                        Home
-                    </Link>
-                </li>
-                <li>
-                    <Link
-                        className="hover:text-red-700 hover:border hover: border-2 hover: p-2" to="/register"
-                    >
-                        Register
-                    </Link>
-                </li>
-                <li>
-                    <Link
-                        className="hover:text-red-700 hover:border hover: border-2 hover: p-2" to="/login"
-                    >
-                        Login
-                    </Link>
-                </li>
-            </ul>
-        </div>
+        <>
+            <h1 className="text-4xl p-4 ml-4">Dashboard</h1>
+            <div className='min-h-screen flex gap-8'>
+                <SideBar />
+                <div className='border-r min-h-screen'></div>
+                <Outlet />
+            </div>
+        </>
     )
 }
 
-export default NavBar;
+export default Dashboard;
